@@ -4,26 +4,23 @@ import Store from "@/store";
 
 export default {
   name: "CalendarWeek",
-  components: {CalendarDay},
+  components: {
+    CalendarDay,
+  },
   data() {
     return {
-      calendarWeekData: Store.state.calendarWeekData
-  }
-}
-
-
-}
+      calendarWeekData: Store.state.calendarWeekData,
+    };
+  },
+};
 </script>
 
 <template>
   <div id="calender-week">
     <div class="card-group">
-      <CalendarDay v-for="day in calendarWeekData" :key="day.id"/>
+      <CalendarDay v-for="day in calendarWeekData" :key="day.id" :day="day" />
     </div>
   </div>
-
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
